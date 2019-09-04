@@ -17,7 +17,7 @@ echo $(minikube ip):$(kubectl get svc $INGRESSGATEWAY --namespace istio-system -
 
 Now we get something like `192.168.39.25:31619`
 
-Next we need to get the URL of the service, with `k get ksvc`, like:
+Next we need to get the URL of the service, with `kubectl get ksvc`, like:
 
 ```
 NAME            URL                                        LATESTCREATED         LATESTREADY           READY   REASON

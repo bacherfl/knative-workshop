@@ -4,6 +4,9 @@ metadata:
   name: testevents-trigger
   namespace: default
 spec:
+#  filter:
+#    attributes:
+#      type: dev.knative.apiserver.resource.add
   subscriber:
     ref:
       apiVersion: serving.knative.dev/v1alpha1
