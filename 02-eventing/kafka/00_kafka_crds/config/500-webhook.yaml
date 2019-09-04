@@ -35,7 +35,7 @@ spec:
       containers:
       - name: kafka-webhook
         terminationMessagePolicy: FallbackToLogsOnError
-        image: knative.dev/eventing-contrib/kafka/channel/cmd/webhook
+        image: gcr.io/knative-releases/github.com/knative/eventing-contrib/kafka/channel/cmd/webhook
         volumeMounts:
         - name: config-logging
           mountPath: /etc/config-logging
