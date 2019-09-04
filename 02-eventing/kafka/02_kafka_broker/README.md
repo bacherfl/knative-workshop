@@ -25,10 +25,7 @@ data:
 Use the _new_ `channels.messaging.knative.dev` CRD to create a new channel:
 
 ```
-apiVersion: messaging.knative.dev/v1alpha1
-kind: Channel
-metadata:
-  name: testchannel-one
+kubectl apply -f channel.yaml
 ```
 
 > NOTE: This does not allow you to set any _specific_ details that might be possible for the actual Channel implementation, such as partitions on the Kafka topic.
@@ -36,7 +33,7 @@ metadata:
 Now, you can check in Kafka if there is a `testchannel` topic, like:
 
 ```
-oc -n kafka exec -it my-cluster-kafka-0 -- bin/kafka-topics.sh --zookeeper localhost:2181 --list
+kubectl -n kafka exec -it my-cluster-kafka-0 -- bin/kafka-topics.sh --zookeeper localhost:2181 --list
 ```
 
 And see the following result:
