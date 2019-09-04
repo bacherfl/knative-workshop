@@ -4,7 +4,7 @@ With the Apache Kafka CRD based channel installed, you can configure Knative to 
 
 ## Configuration
 
-To configure the usage of the `KafkaChannels` as default, edit the `default-ch-webhook` Configmap, like:
+To configure the usage of the `KafkaChannels` as default, edit the `default-ch-webhook` Configmap (`kubectl edit cm default-ch-webhook -n knative-eventing`), like:
 
 ```
 apiVersion: v1
