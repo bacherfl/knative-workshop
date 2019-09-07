@@ -1,4 +1,4 @@
-# Knative demos on Minikub
+# Knative demos on Minikube
 
 Details on Knative tutorial
 
