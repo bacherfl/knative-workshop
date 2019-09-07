@@ -29,3 +29,9 @@ The trigger is used to route events, based on type etc to services, apply like:
 ```
 kubectl apply -f 030-trigger.yaml
 ```
+
+To view the subscriber's logs, execute:
+
+```
+kubectl logs --selector serving.knative.dev/service=event-display -c user-container
+```

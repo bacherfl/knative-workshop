@@ -31,3 +31,9 @@ kubectl apply -f 030-trigger.yaml
 ```
 
 The above trigger uses no specific filter. Now, update the filter to route those events you like.
+
+To view the subscriber's logs, execute:
+
+```
+kubectl logs --selector serving.knative.dev/service=k8s-event-display -c user-container
+```

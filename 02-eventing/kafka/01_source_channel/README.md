@@ -27,3 +27,9 @@ kubectl apply -f 020-k8s-events.yaml
 ```
 kubectl apply -f 030-subscription.yaml
 ```
+
+1. To view the subscriber's logs, execute:
+
+```
+kubectl logs --selector serving.knative.dev/service=channel-display0 -c user-container
+```
