@@ -11,8 +11,8 @@ kubectl apply -f 010_ksvc_ghello.yaml
 We need to find the port and the IP address of the running istio ingress gateway, so run this:
 
 ```
-INGRESSGATEWAY=istio-ingressgateway
-echo $(minikube ip):$(kubectl get svc $INGRESSGATEWAY --namespace istio-system --output 'jsonpath={.spec.ports[?(@.port==80)].nodePort}')
+INGRESSGATEWAY="$(minikube ip):$(kubectl get svc istio-ingressgateway --namespace istio-system --output 'jsonpath={.spec.ports[?(@.port==80)].nodePort}')"
+echo $INGRESSGATEWAY
 ```
 
 Now we get something like `192.168.39.25:31619`
@@ -27,7 +27,7 @@ helloworld-go   http://helloworld-go.default.example.com   helloworld-go-pzbw7  
 To access the service, run:
 
 ```
-curl -H "Host: helloworld-go.default.example.com" 192.168.39.25:31619
+curl -H "Host: helloworld-go.default.example.com" $INGRESSGATEWAY
 ```
 
 > NOTE: the Host header matches the URL from the above printout.
